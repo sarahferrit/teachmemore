@@ -1,7 +1,7 @@
 ---
 title: "Teach Me More"
 author: "Sarah Ferriter"
-date: "7/29/2025"
+date: "8/06/2025"
 format: 
   html:
     code-fold: false
