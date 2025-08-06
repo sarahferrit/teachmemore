@@ -1,0 +1,51 @@
+---
+title: "Photo Gallery"
+---
+
+# Charlestown
+
+![Harborwalk in Charlestown](images/IMG_8061-edit.jpg){fig-alt="Image of the Harborwalk in Charlestown" width="985"}
+
+![Little Mystic Plaza along the Harborwalk in Charlestown](images/IMG_8881-edit.jpg){fig-alt="Little Mystic Plaza along the Harborwalk in Charlestown" width="935"}
+
+![Charlestown Sprouts Community Garden next to the Harborwalk in Charlestown](images/IMG_8888-edit.jpg){fig-alt="Charlestown Sprouts Community Garden next to the Harborwalk in Charlestown" width="995"}
+
+# Dorchester
+
+![Harborwalk at UMass Boston in Dorchester](images/IMG_8404-edit.jpg){fig-alt="Harborwalk at UMass Boston in Dorchester with a bicyclist" width="992"}
+
+![Cobble Berm along the Harborwalk in Dorchester by Stone Living Lab/Boston Harbor Now and Woods Hole Group](images/IMG_8455-edit.jpg){fig-alt="Cobble Berm along the Harborwalk in Dorchester by Stone Living Lab/Boston Harbor Now and Woods Hole Group" width="966"}
+
+# Downtown
+
+![Harborwalk next to the New England Aquarium in Downtown](images/IMG_8238-edit.jpg){fig-alt="Harborwalk next to the New England Aquarium in Downtown" width="1006"}
+
+![Harborwalk on Long Wharf near the Marriott and Christopher Columbus Park in Downtown](images/IMG_8260-edit.jpg){fig-alt="Harborwalk on Long Wharf near the Marriott and Christopher Columbus Park in Downtown" width="1008"}
+
+# East Boston
+
+![Living shoreline at Clippership Apartments in East Boston](images/IMG_8678-edit.jpg){fig-alt="Living shoreline at Clippership Apartments in East Boston" width="996"}
+
+![Piers Park in East Boston](images/IMG_8691-edit.jpg){fig-alt="Piers Park in East Boston" width="980"}
+
+![Joe Ciampa Community Garden in East Boston](images/IMG_8730-edit.jpg){fig-alt="Joe Ciampa Community Garden in East Boston" width="711"}
+
+# North End
+
+![Harborwalk at Langone Park, a City park designed with climate resilient features, in the North End](images/IMG_8284-edit.jpg){fig-alt="Harborwalk at Langone Park, a City park designed with climate resilient features, in the North End" width="996"}
+
+![The Gridley Locks Footpath, part of the Harborwalk, connecting the North End with Charlestown](images/IMG_8299-edit.jpg){fig-alt="The Gridley Locks Footpath, part of the Harborwalk, connecting the North End with Charlestown" width="983"}
+
+# South Boston
+
+![I Street Beach in South Boston](images/IMG_8460-edit.jpg){fig-alt="I Street Beach in South Boston" width="957"}
+
+![The Harborwalk at Castle Island in South Boston](images/IMG_8477-edit.jpg){fig-alt="The Harborwalk at Castle Island in South Boston" width="951"}
+
+![1st Street Park on the Reserved Channel along the Harborwalk in South Boston](images/IMG_8497-edit.jpg){fig-alt="1st Street Park on the Reserved Channel along the Harborwalk in South Boston" width="962"}
+
+# South Boston Waterfront
+
+![Living Seawall by Stone Living Lab/Boston Harbor Now and Living Seawalls in Fan Pier Park, Seaport](images/IMG_8180-edit.jpg){fig-alt="Living Seawall by Stone Living Lab/Boston Harbor Now and Living Seawalls in Fan Pier Park, Seaport" width="956"}
+
+![Harborwalk near the Institute of Contemporary Art in Seaport](images/IMG_8198edit.jpg){fig-alt="Harborwalk near the Institute of Contemporary Art in Seaport" width="1962"}

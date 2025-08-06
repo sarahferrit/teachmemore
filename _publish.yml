@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 224fcb5b-bf31-4e13-9f17-65d07dbcaf76
+      url: 'https://sarahferrit.quarto.pub/teach-me-more'

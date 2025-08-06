@@ -1,0 +1,132 @@
+---
+title: "Teach Me More"
+author: "Sarah Ferriter"
+date: "7/29/2025"
+format: 
+  html:
+    code-fold: false
+execute:
+  warnings: false
+  error: false
+---
+
+```{r}
+#| output: false
+#| echo: false
+#load packages
+library(sf)
+library(here)
+library(rnaturalearth)
+library(tidyverse)
+library(leaflet)
+library(ggspatial)
+library(ggthemes)
+library(htmlwidgets)
+library(RColorBrewer)
+library(crsuggest)
+```
+
+# Introduction
+
+The Boston Harborwalk spans 43 miles of the city’s coastline, passing through many neighborhoods that are vulnerable to the impacts of a changing climate such as increased heat and flooding. The Harborwalk itself serves as the edge between communities constructed on human-made land and the Boston Harbor along much of its length, often making this public pathway one of the first structures to experience coastal flooding during high tides or storm surges.
+
+With climate concerns becoming more pressing, the purpose of this project is to evaluate what climate-related educational programming is already done along the Harborwalk and to identify opportunities for more. Recommendations for additional climate education programs, activities, and materials prioritize locations and topics that are environmentally and socially relevant for residents and visitors of the Boston Harbor waterfront.
+
+# Map
+
+The following interactive map displays existing and recommended climate-related educational programming along the Boston Harborwalk. This tool may be used by Boston Harbor Now to help guide future programming efforts. Click on a point or polygon to see details about the feature. Toggle layers on or off as needed.
+
+```{r}
+#| output: true
+#| echo: false
+# read in data files
+ej_communities <- read_sf(here("data","MA_EJ_populations","shp"))
+ej_communities_proj <- st_transform(ej_communities, "+proj=longlat +datum=WGS84")
+
+existing_climate_program <- read_sf(here("data","existing_climate_program"))
+existing_climate_program_proj <- st_transform(existing_climate_program, "+proj=longlat +datum=WGS84")
+
+recommended_climate_program <- read_sf(here("data","recommended_climate_program"))
+recommended_climate_program_proj <- st_transform(recommended_climate_program, "+proj=longlat +datum=WGS84")
+
+thirtysixin_SLR_1pct <- read_sf(here("data","36in_SLR_1pct"))
+thirtysixin_SLR_1pct_proj <- st_transform(thirtysixin_SLR_1pct, "+proj=longlat +datum=WGS84")
+
+harborwalk <- read_sf(here("data","Harborwalk_Updated_KML","doc.kml"))
+harborwalk_proj <- st_transform(harborwalk,"+proj=longlat +datum=WGS84")
+harborwalk_proj_fix <- st_zm(harborwalk_proj)
+
+# create map
+leaflet(options=leafletOptions(minZoom = 7)) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  setView(lng=-71.04439, 
+          lat=42.35478,
+          zoom=11)%>%
+  addPolygons(data=thirtysixin_SLR_1pct_proj,
+              group="Flood risk",
+              color="#4F91CD",
+              stroke=FALSE,
+              fillOpacity = 0.4)%>%
+  addPolygons(data=ej_communities_proj,
+              group="Environmental Justice population",
+              popup= paste("Environmental Justice criteria:",ej_communities_proj$EJ_CRIT_DE),
+              color="#80C48A",
+              weight=0.5,
+              opacity=1,
+              fillOpacity = 0.3) %>%
+  addPolylines(data=harborwalk_proj_fix,
+               group="Boston Harborwalk",
+               color="#E2AA5F",
+               weight=2,
+               opacity=1)%>%
+  addCircleMarkers(data=existing_climate_program_proj,
+                   group="Existing climate program",
+                   popup= paste("Existing climate program","<br>",
+                                "Name:",existing_climate_program_proj$Name,"<br>",
+                                "Responsible Party:",existing_climate_program_proj$Responsibl,"<br>",
+                                "Permanence:",existing_climate_program_proj$Permanence,"<br>",
+                                "Participation Type:",existing_climate_program_proj$Participat,"<br>",
+                                "Location:",existing_climate_program_proj$Location,"<br>",
+                                "Neighborhood:",existing_climate_program_proj$Neighborho,"<br>",
+                                "Topic:",existing_climate_program_proj$Topic,"<br>",
+                                "Accessibility:",existing_climate_program_proj$Accessibil,"<br>",
+                                "Link:",existing_climate_program_proj$Link,"<br>"),
+                   color="#7372AE",
+                   stroke=FALSE,
+                   fillOpacity = 0.75,
+                   radius=5)%>%
+  addCircleMarkers(data=recommended_climate_program_proj,
+                   group="Recommended climate program",
+                   popup=paste("Recommended climate program","<br>",
+                              "Name:",recommended_climate_program_proj$Name,"<br>",
+                              "Permanence:",recommended_climate_program_proj$Permanence,"<br>",
+                              "Participation Type:",recommended_climate_program_proj$Participat,"<br>",
+                              "Location:",recommended_climate_program_proj$Location,"<br>",
+                              "Neighborhood:",recommended_climate_program_proj$Neighborho,"<br>",
+                              "Possible Partners:",recommended_climate_program_proj$Possible_p,"<br>",
+                              "Topic:",recommended_climate_program_proj$Topic,"<br>",
+                              "Priority criteria:", recommended_climate_program_proj$Priority_c,"<br>",
+                              "Accessibility considerations:",recommended_climate_program_proj$Accessibil,"<br>",
+                              "Link:",recommended_climate_program_proj$Link_resou,"<br>"),
+                   color="#D3785B",
+                   stroke=FALSE,
+                   fillOpacity = 0.75,
+                   radius=6)%>%
+  addLegend(position="bottomright",
+            colors=c("#4F91CD","#80C48A","#E2AA5F","#7372AE","#D3785B"),
+            labels=c("Flood area for the 1% annual chance <br> storm with 36in sea level rise","Environmental Justice population","Boston Harborwalk", "Existing climate program","Recommended climate program"),
+            opacity=c(0.3,0.2,1,0.75,0.75))%>%
+  addLayersControl(overlayGroups =c("Flood risk","Environmental Justice population","Boston Harborwalk","Existing climate program","Recommended climate program"),
+                   options=layersControlOptions(collapsed=FALSE))
+  
+```
+
+# Key Term Definitions
+
+**Climate programming** - events, activities, or materials that cover topics related to climate change like increasing heat, storms, and sea level rise.
+
+**Educational signage** - sign or 2-dimensional display with text, graphics, and/or images that intend to educate the public about a topic.
+
+**Existing programming** - events, activities, or materials that are currently ongoing or installed, or that took place or are planned to take place in the 2025 calendar year (as of August).
+
+**Environmental Justice (EJ) communities** - US Census tracts where the population may experience greater burdens from current and historical environmental impacts based on income, racial or ethnic identity, or English language isolation factors. (Massachusetts Environmental Justice Policy 2021)

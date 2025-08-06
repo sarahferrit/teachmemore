@@ -1,0 +1,27 @@
+---
+title: "About"
+---
+
+I was hired by Boston Harbor Now (BHN) to work on this project for 10 weeks during Summer 2025 as a Planning and Policy Fellow through the Harvard Graduate School of Design Community Service Fellowship Program. The results of my work include this online interactive map of existing and recommended climate-related programs along the Boston Harborwalk.
+
+This map was created using found data (Flood risk, EJ populations, transit layers) and created layers (existing and recommended climate programs). Sources for the found data are listed below. To catalog the existing climate programs shown, I spoke with BHN and partner staff, conducted desktop research, and visited \## miles of the Harborwalk. To recommend additional programs, I drew inspiration from BHN staff and other cities and programs, made field observations, and conducted a public survey reaching \### people.
+
+I built the interactive map in RStudio using Quarto markdown and it is hosted on my personal Quarto Pub site.
+
+# Sources
+
+Boston Harborwalk. (n.d.). "Harborwalk Updated KML". https://www.bostonharborwalk.org/
+
+City of Boston. (Updated 2020-07-08). "36inch Sea Level Rise 1pct Annual Flood". https://data.boston.gov/dataset/climate-ready-boston-sea-level-rise-inundation.
+
+MassGIS. (2020). "EJ_POLY". https://www.mass.gov/info-details/massgis-data-2020-environmental-justice-populations.
+
+MassGIS. (2017). "MBTA Bus Routes and Stops". https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops.
+
+MassGIS. (2022). "MBTA Rapid Transit". https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit.
+
+MassGIS. (2023). "Trains". https://www.mass.gov/info-details/massgis-data-trains.
+
+MA Office of Environmental Justice & Equity. (2021). "Environmental Justice Policy".https://www.mass.gov/info-details/environmental-justice-policy.
+
+
