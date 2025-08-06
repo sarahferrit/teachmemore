@@ -24,6 +24,7 @@ library(ggthemes)
 library(htmlwidgets)
 library(RColorBrewer)
 library(crsuggest)
+library(renv)
 ```
 
 # Introduction
@@ -130,3 +131,6 @@ leaflet(options=leafletOptions(minZoom = 7)) %>%
 **Existing programming** - events, activities, or materials that are currently ongoing or installed, or that took place or are planned to take place in the 2025 calendar year (as of August).
 
 **Environmental Justice (EJ) communities** - US Census tracts where the population may experience greater burdens from current and historical environmental impacts based on income, racial or ethnic identity, or English language isolation factors. (Massachusetts Environmental Justice Policy 2021)
+
+
+
